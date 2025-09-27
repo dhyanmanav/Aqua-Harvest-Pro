@@ -1,47 +1,38 @@
-const CACHE_NAME = 'Aqva Harvest-cache-v1'; // Change this version to force update
-
-const FILES_TO_CACHE = [
+const CACHE_NAME = 'aqh-cache-v1';
+const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
   '/app.js',
   '/logo.png',
-  '/manifest.json'
+  '/manifest.json',
+  // Add all other relevant assets and pages here
 ];
 
-// Install event: cache files
-self.addEventListener('install', (event) => {
-  self.skipWaiting(); // Activate worker immediately
-
+// Install event
+self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(FILES_TO_CACHE))
+      .then(cache => cache.addAll(urlsToCache))
+      .then(() => self.skipWaiting())
   );
 });
 
-// Activate event: clear old caches
-self.addEventListener('activate', (event) => {
-  clients.claim(); // Start controlling all clients immediately
-
+// Activate event
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            // Delete old caches
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
+    caches.keys().then(cacheNames =>
+      Promise.all(
+        cacheNames.filter(name => name !== CACHE_NAME)
+          .map(name => caches.delete(name))
+      )
+    ).then(() => self.clients.claim())
   );
 });
 
-// Fetch event: respond with cached or network
-self.addEventListener('fetch', (event) => {
+// Fetch handler to serve cached assets
+self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
+    caches.match(event.request).then(response => response || fetch(event.request))
   );
 });
