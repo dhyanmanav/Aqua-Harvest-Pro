@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaHarvest Pro - Transform Every Drop into Opportunity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQXF1YUhhcnZlc3QgUHJvIiwic2hvcnRfbmFtZSI6IkFxdWFIYXJ2ZXN0IiwiZGVzY3JpcHRpb24iOiJSb29mdG9wIFJhaW53YXRlciBIYXJ2ZXN0aW5nIEFzc2Vzc21lbnQgQXBwIiwic3RhcnRfdXJsIjoiLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNmZmZmZmYiLCJ0aGVtZV9jb2xvciI6IiMyMTgwOGQiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M00yNXZjbWN2TWpBd01DOXpkbWNpSUhkcFpIUm9QU0k0TUNJZ2FHVnBaMmgwUFNJNE1DSStQSEpsWTNRZ2VEMGlNVEFpSUhrOUlqRXdJaUIzYVdSMGFEMGlOakFpSUdobGFXZG9kRDBpTmpBaUlISnlQU0l6SWlCbWFXeHNQU0lqTWpFNE1EaGtJaTgrUEhCaGRHZ2dZejBpVFRJMUxUSTFWakkxTFRJMVNETTFWakl5TFRKSU16Z1dNams0SURJMFdqSTBVamd0TkNJZ2MzUnliMnRsUFNJak5EWTBOalEySWlCbWFXeHNQU0p1YjI1bElpQnpkSEp2YTJVdGQybGtkR2c5SWpJaUx6NDhMM04yWno0PSIsInNpemVzIjoiNTEyeDUxMiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn1dfQ==">
+    <meta name="theme-color" content="#21808d">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCI+PHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHJ5PSIzIiBmaWxsPSIjMjE4MDhkIi8+PHBhdGggZD0iTTI1LTI1VjI1LTI1SDM1VjIyLTJIMzhWMjk4IDI0VjI0Ujgt0CIgc3Ryb2tlPSIjNDY0NjQ2IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=">
+</head>
+<body>
+    <!-- Language Selector Modal -->
+    <div id="languageModal" class="modal hidden">
+        <div class="modal-content">
+            <h3 data-translate="select-language">Select Language / भाषा चुनें</h3>
+            <div class="language-grid">
+                <button class="language-btn" data-lang="en">English</button>
+                <button class="language-btn" data-lang="hi">हिंदी</button>
+                <button class="language-btn" data-lang="ta">தமிழ்</button>
+                <button class="language-btn" data-lang="bn">বাংলা</button>
+                <button class="language-btn" data-lang="gu">ગુજરાતી</button>
+                <button class="language-btn" data-lang="mr">मराठी</button>
+                <button class="language-btn" data-lang="te">తెలుగు</button>
+                <button class="language-btn" data-lang="kn">ಕನ್ನಡ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="container">
+            <div class="nav-brand">
+                <div class="logo">💧 AquaHarvest Pro</div>
+            </div>
+            <div class="nav-menu">
+                <button id="languageBtn" class="btn btn--outline btn--sm">
+                    <span data-translate="language">Language</span> 🌐
+                </button>
+                <button id="installBtn" class="btn btn--primary btn--sm" style="display: none;">
+                    <span data-translate="install">Install App</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- Hero Section -->
+        <section id="heroSection" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 data-translate="hero-title">Transform Every Drop into Opportunity</h1>
+                        <p data-translate="hero-subtitle">AI-powered rooftop rainwater harvesting assessment with personalized solutions and government subsidy guidance</p>
+                        <div class="hero-cta">
+                            <button id="startAssessmentBtn" class="btn btn--primary btn--lg">
+                                <span data-translate="start-assessment">Start Free Assessment</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">50,000+</div>
+                            <div class="stat-label" data-translate="stat-assessments">Assessments Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">₹2.5 Cr</div>
+                            <div class="stat-label" data-translate="stat-saved">Water Bills Saved</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100M L</div>
+                            <div class="stat-label" data-translate="stat-harvested">Water Harvested</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label" data-translate="stat-communities">Communities</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3 data-translate="feature-smart">Smart Assessment</h3>
+                        <p data-translate="feature-smart-desc">AI-powered analysis of your property's rainwater harvesting potential</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3 data-translate="feature-custom">Custom Solutions</h3>
+                        <p data-translate="feature-custom-desc">Personalized RTRWH system recommendations based on your needs</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3 data-translate="feature-cost">Cost Analysis</h3>
+                        <p data-translate="feature-cost-desc">Detailed cost breakdown with government subsidy information</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌱</div>
+                        <h3 data-translate="feature-impact">Environmental Impact</h3>
+                        <p data-translate="feature-impact-desc">Calculate your contribution to groundwater conservation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment Wizard -->
+        <section id="assessmentWizard" class="wizard hidden">
+            <div class="container">
+                <div class="wizard-header">
+                    <h2 data-translate="assessment-title">Rainwater Harvesting Assessment</h2>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <div class="step-indicators">
+                        <div class="step-indicator active" data-step="1">1</div>
+                        <div class="step-indicator" data-step="2">2</div>
+                        <div class="step-indicator" data-step="3">3</div>
+                        <div class="step-indicator" data-step="4">4</div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Location Details -->
+                <div id="step1" class="wizard-step active">
+                    <h3 data-translate="step1-title">Location Details</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" data-translate="address">Address</label>
+                            <input type="text" id="address" class="form-control" data-translate-placeholder="enter-address">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="pin-code">PIN Code</label>
+                            <input type="text" id="pinCode" class="form-control" data-translate-placeholder="enter-pin">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="state">State</label>
+                            <select id="state" class="form-control">
+                                <option value="" data-translate="select-state">Select State</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="West Bengal">West Bengal</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="district">District</label>
+                            <input type="text" id="district" class="form-control" data-translate-placeholder="enter-district">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Property Information -->
+                <div id="step2" class="wizard-step hidden">
+                    <h3 data-translate="step2-title">Property Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label class="form-label" data-translate="roof-area">Roof Area (sq ft): <span id="roofAreaValue">1000</span></label>
+                            <input type="range" id="roofArea" class="slider" min="100" max="10000" value="1000" step="50">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="storage-space">Available Storage Space</label>
+                            <select id="storageSpace" class="form-control">
+                                <option value="limited" data-translate="limited">Limited (<500 sq ft)</option>
+                                <option value="moderate" data-translate="moderate">Moderate (500-1500 sq ft)</option>
+                                <option value="ample" data-translate="ample">Ample (>1500 sq ft)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="roof-type">Roof Type</label>
+                            <select id="roofType" class="form-control">
+                                <option value="concrete" data-translate="concrete">Concrete</option>
+                                <option value="metal" data-translate="metal">Metal Sheet</option>
+                                <option value="tile" data-translate="tile">Clay Tiles</option>
+                                <option value="thatched" data-translate="thatched">Thatched</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="building-height">Building Height</label>
+                            <select id="buildingHeight" class="form-control">
+                                <option value="single" data-translate="single-story">Single Story</option>
+                                <option value="double" data-translate="double-story">Double Story</option>
+                                <option value="multi" data-translate="multi-story">Multi Story</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Household Details -->
+                <div id="step3" class="wizard-step hidden">
+                    <h3 data-translate="step3-title">Household Details</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" data-translate="residents">Number of Residents</label>
+                            <input type="number" id="residents" class="form-control" min="1" max="20" value="4">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="water-consumption">Daily Water Consumption (Liters)</label>
+                            <input type="number" id="waterConsumption" class="form-control" min="50" max="2000" value="600">
+                            <small class="form-text" data-translate="consumption-guide">Guidelines: 150L per person per day</small>
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label" data-translate="current-source">Current Water Source</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" value="municipal"> <span data-translate="municipal">Municipal Supply</span></label>
+                                <label><input type="checkbox" value="borewell"> <span data-translate="borewell">Borewell</span></label>
+                                <label><input type="checkbox" value="tanker"> <span data-translate="tanker">Water Tanker</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Preferences -->
+                <div id="step4" class="wizard-step hidden">
+                    <h3 data-translate="step4-title">Preferences & Budget</h3>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label class="form-label" data-translate="budget">Budget Range (₹): <span id="budgetValue">₹50,000</span></label>
+                            <input type="range" id="budget" class="slider" min="10000" max="500000" value="50000" step="5000">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="maintenance">Maintenance Level</label>
+                            <select id="maintenance" class="form-control">
+                                <option value="low" data-translate="low-maintenance">Low Maintenance</option>
+                                <option value="medium" data-translate="medium-maintenance">Medium Maintenance</option>
+                                <option value="high" data-translate="high-maintenance">High Performance</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="primary-use">Primary Use</label>
+                            <select id="primaryUse" class="form-control">
+                                <option value="domestic" data-translate="domestic">Domestic Use</option>
+                                <option value="irrigation" data-translate="irrigation">Garden/Irrigation</option>
+                                <option value="recharge" data-translate="recharge">Groundwater Recharge</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <div class="subsidy-info">
+                                <h4 data-translate="govt-subsidies">Government Subsidies Available</h4>
+                                <div id="subsidyDetails" class="subsidy-details"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard-navigation">
+                    <button id="prevBtn" class="btn btn--outline" style="display: none;" data-translate="previous">Previous</button>
+                    <button id="nextBtn" class="btn btn--primary" data-translate="next">Next</button>
+                    <button id="calculateBtn" class="btn btn--primary" style="display: none;" data-translate="calculate">Calculate Results</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Dashboard -->
+        <section id="resultsDashboard" class="results hidden">
+            <div class="container">
+                <div class="results-header">
+                    <h2 data-translate="results-title">Your RTRWH Assessment Results</h2>
+                    <div class="feasibility-score">
+                        <div id="feasibilityMeter" class="feasibility-meter">
+                            <div class="meter-fill"></div>
+                        </div>
+                        <div class="score-text">
+                            <span data-translate="feasibility">Feasibility Score</span>: <strong id="feasibilityScore">85%</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-tabs">
+                    <button class="tab-btn active" data-tab="overview" data-translate="overview">Overview</button>
+                    <button class="tab-btn" data-tab="structures" data-translate="structures">Structures</button>
+                    <button class="tab-btn" data-tab="economics" data-translate="economics">Economics</button>
+                    <button class="tab-btn" data-tab="technical" data-translate="technical">Technical</button>
+                    <button class="tab-btn" data-tab="impact" data-translate="impact">Impact</button>
+                    <button class="tab-btn" data-tab="action" data-translate="action-plan">Action Plan</button>
+                </div>
+
+                <div id="overviewTab" class="tab-content active">
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h4 data-translate="annual-harvest">Annual Harvest Potential</h4>
+                            <div class="result-value" id="annualHarvest">45,000 L</div>
+                        </div>
+                        <div class="result-card">
+                            <h4 data-translate="cost-savings">Annual Cost Savings</h4>
+                            <div class="result-value" id="costSavings">₹18,000</div>
+                        </div>
+                        <div class="result-card">
+                            <h4 data-translate="payback-period">Payback Period</h4>
+                            <div class="result-value" id="paybackPeriod">2.8 years</div>
+                        </div>
+                        <div class="result-card">
+                            <h4 data-translate="govt-subsidy">Government Subsidy</h4>
+                            <div class="result-value" id="govtSubsidy">₹25,000</div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h4 data-translate="monthly-harvest">Monthly Harvest Projection</h4>
+                        <canvas id="harvestChart"></canvas>
+                    </div>
+                </div>
+
+                <div id="structuresTab" class="tab-content hidden">
+                    <div class="structures-content">
+                        <h4 data-translate="recommended-structures">Recommended RTRWH Structures</h4>
+                        <div id="structuresList"></div>
+                    </div>
+                </div>
+
+                <div id="economicsTab" class="tab-content hidden">
+                    <div class="economics-content">
+                        <div class="cost-breakdown">
+                            <h4 data-translate="cost-breakdown">Cost Breakdown</h4>
+                            <canvas id="costChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="technicalTab" class="tab-content hidden">
+                    <div class="technical-details">
+                        <h4 data-translate="technical-specs">Technical Specifications</h4>
+                        <div id="technicalSpecs"></div>
+                    </div>
+                </div>
+
+                <div id="impactTab" class="tab-content hidden">
+                    <div class="impact-metrics">
+                        <h4 data-translate="environmental-impact">Environmental Impact</h4>
+                        <div id="impactDetails"></div>
+                    </div>
+                </div>
+
+                <div id="actionTab" class="tab-content hidden">
+                    <div class="action-plan">
+                        <h4 data-translate="next-steps">Next Steps</h4>
+                        <div id="actionPlan"></div>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="downloadBtn" class="btn btn--outline" data-translate="download-report">Download Report</button>
+                    <button id="shareBtn" class="btn btn--outline" data-translate="share-results">Share Results</button>
+                    <button id="newAssessmentBtn" class="btn btn--primary" data-translate="new-assessment">New Assessment</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Module -->
+        <section id="educationSection" class="education">
+            <div class="container">
+                <h2 data-translate="learn-more">Learn More About Rainwater Harvesting</h2>
+                <div class="modules-grid" id="modulesGrid"></div>
+            </div>
+        </section>
+
+        <!-- Community Hub -->
+        <section id="communitySection" class="community">
+            <div class="container">
+                <h2 data-translate="community-impact">Community Impact</h2>
+                <div class="community-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label" data-translate="villages-covered">Villages Covered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50,000 Tons</div>
+                        <div class="stat-label" data-translate="co2-reduced">CO2 Reduced</div>
+                    </div>
+                </div>
+                <div class="success-stories">
+                    <h3 data-translate="success-stories">Success Stories</h3>
+                    <div id="storiesGrid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">💧 AquaHarvest Pro</div>
+                    <p data-translate="footer-desc">Empowering communities with smart rainwater harvesting solutions</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate="resources">Resources</h4>
+                    <ul>
+                        <li><a href="#" data-translate="documentation">Documentation</a></li>
+                        <li><a href="#" data-translate="api">API</a></li>
+                        <li><a href="#" data-translate="support">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AquaHarvest Pro. <span data-translate="rights-reserved">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p data-translate="calculating">Calculating your results...</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
