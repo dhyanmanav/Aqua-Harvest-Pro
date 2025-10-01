@@ -433,7 +433,9 @@ function startAssessment() {
   hideSection('heroSection');
   showSection('assessmentWizard');
   updateProgressBar();
+  scrollToSection('assessmentWizard'); // ✅ scroll here
 }
+
 
 function startNewAssessment() {
   currentStep = 1;
@@ -460,6 +462,7 @@ function startNewAssessment() {
   showSection('assessmentWizard');
   updateProgressBar();
   updateStepIndicators();
+  scrollToSection('assessmentWizard');
 }
 
 function nextStep() {
@@ -579,23 +582,20 @@ function updateSubsidyInfo() {
 
 function calculateResults() {
   showLoadingSpinner();
-  
-  // Save final step data
   saveCurrentStepData();
   
-  // Perform RTRWH calculations
   setTimeout(() => {
     const results = performRTRWHCalculations();
     displayResults(results);
     hideLoadingSpinner();
-    
-    // Save assessment to history
     saveAssessmentToHistory();
     
     hideSection('assessmentWizard');
     showSection('resultsDashboard');
+    scrollToSection('resultsDashboard'); // ✅ scroll here
   }, 2000);
 }
+
 
 function performRTRWHCalculations() {
   const roofArea = parseFloat(assessmentData.roofArea) || 1000;
@@ -1133,6 +1133,16 @@ if (typeof module !== 'undefined' && module.exports) {
     generateMonthlyHarvestData
   };
 }
+
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').then(registration => {
@@ -1142,4 +1152,6 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-//hello
+
+
+
